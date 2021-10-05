@@ -1,6 +1,6 @@
 package fr.banque;
 
-public class CompteASeuil extends Compte{
+public class CompteASeuil extends Compte implements ICompteASeuil{
     private Double seuil;
 
     public Double getSeuil() {

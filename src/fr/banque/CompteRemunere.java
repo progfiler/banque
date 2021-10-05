@@ -1,6 +1,6 @@
 package fr.banque;
 
-public class CompteRemunere extends Compte {
+public class CompteRemunere extends Compte implements ICompteRemunere{
     private Double taux;
 
     public CompteRemunere() {
@@ -32,7 +32,7 @@ public class CompteRemunere extends Compte {
                 '}';
     }
 
-    private double calculerInterets() {
+    public Double calculerInterets() {
         return this.getTaux()*this.getSolde();
     }
 
