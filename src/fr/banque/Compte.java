@@ -1,8 +1,8 @@
 package fr.banque;
 
 public class Compte {
-    Integer numero;
-    Double solde;
+    private Integer numero;
+    private Double solde;
 
     public Compte() {
     }
