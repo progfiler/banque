@@ -2,7 +2,7 @@ package fr.banque;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BanqueException {
         Client antoine = new Client("Fissot", "Antoine", 36, 25441);
         Compte cas = new CompteASeuil(124, 200d, 100d);
         Compte cr = new CompteRemunere(352, 60000d, 0.2);
@@ -22,12 +22,16 @@ public class Main {
 //        cr2.verserInterets();
 //        System.out.println(antoine.getCompte(352).getSolde());
 
-        Double solde = antoine.getCompte(555).getSolde();
-        antoine.getCompte(555).retirer(15000d);
-        System.out.println(antoine.getCompte(555).getSolde());
-        CompteRemunere T = (CompteRemunere) antoine.getCompte(555);
-        T.verserInterets();
-        System.out.println(antoine.getCompte(555).getSolde());
+//        Double solde = antoine.getCompte(555).getSolde();
+        try {
+            antoine.getCompte(555).retirer(600000d);
+        } catch (BanqueException e) {
+            e.printStackTrace();
+        }
+//        System.out.println(antoine.getCompte(555).getSolde());
+//        CompteRemunere T = (CompteRemunere) antoine.getCompte(555);
+//        T.verserInterets();
+//        System.out.println(antoine.getCompte(555).getSolde());
 
     }
 }

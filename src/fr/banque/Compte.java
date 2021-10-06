@@ -40,7 +40,9 @@ public class Compte {
         this.solde += unMontant;
     }
 
-    public void retirer(Double unMontant) {
+    public void retirer(Double unMontant) throws BanqueException {
+        if (this.solde - unMontant < 0)
+            throw new BanqueException("Impossible de retirer de l'argent");
         this.solde -= unMontant;
     }
 }

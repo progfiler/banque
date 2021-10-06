@@ -29,12 +29,11 @@ public class CompteASeuil extends Compte implements ICompteASeuil{
     }
 
     @Override
-    public void retirer(Double unMontant) {
+    public void retirer(Double unMontant) throws BanqueException{
         if(this.getSolde()-unMontant > this.getSeuil()){
             super.retirer(unMontant);
         }else{
-            System.out.println("Impossible de retirer de l'argent. Veuillez alimenter votre compte.");
+            throw new BanqueException("Impossible de retirer de l'argent. Veuillez alimenter votre compte.");
         }
-
     }
 }
