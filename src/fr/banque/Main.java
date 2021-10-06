@@ -24,7 +24,7 @@ public class Main {
 
 //        Double solde = antoine.getCompte(555).getSolde();
         try {
-            antoine.getCompte(555).retirer(600000d);
+            antoine.getCompte(555).retirer(6000d);
         } catch (BanqueException e) {
             e.printStackTrace();
         }
